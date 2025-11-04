@@ -57,4 +57,21 @@
         app:layout_constraintBottom_toBottomOf="@id/gambarWayang"
         tools:ignore="MissingConstraints" />
 
+
+    <Button
+        android:id="@+id/btnHapus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hapus"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:backgroundTint="#F44336"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deskripsiWayang" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
