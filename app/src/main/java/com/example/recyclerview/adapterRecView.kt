@@ -1,0 +1,39 @@
+package com.example.recyclerview
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+
+class adapterRecView(private val listWayang: List<dcWayang>) :
+    RecyclerView.Adapter<adapterRecView.ListViewHolder>() {
+
+    inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val _gambarWayang: ImageView = itemView.findViewById(R.id.gambarWayang)
+        val _namaWayang: TextView = itemView.findViewById(R.id.namaWayang)
+        val _karakterWayang: TextView = itemView.findViewById(R.id.karakterWayang)
+        val _deskripsiWayang: TextView = itemView.findViewById(R.id.deskripsiWayang)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_recycler, parent, false)
+        return ListViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return listWayang.size
+    }
+
+    override fun onBindViewHolder(
+        holder: ListViewHolder,
+        position: Int
+    ) {
+        val data = listWayang[position]
+        holder._namaWayang.text = data.nama
+        holder._karakterWayang.text = data.karakter
+        holder._deskripsiWayang.text = data.deskripsi
+    }
+}
