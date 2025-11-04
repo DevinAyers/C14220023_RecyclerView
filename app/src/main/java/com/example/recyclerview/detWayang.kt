@@ -1,10 +1,13 @@
 package com.example.recyclerview
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.squareup.picasso.Picasso
 
 class detWayang : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +18,24 @@ class detWayang : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+
+        val _detFotoWayang: ImageView = findViewById(R.id.detailGambar)
+        val _detNamaWayang: TextView = findViewById(R.id.detailNama)
+        val _detKarakterWayang: TextView = findViewById(R.id.detailKarakter)
+        val _detDetailWayang: TextView = findViewById(R.id.detailDeskripsi)
+
+        val dataIntent = intent.getParcelableExtra<dcWayang>(
+            "kirimData", dcWayang::class.java )
+
+        if (dataIntent != null) {
+            Picasso.get()
+                .load ( dataIntent.foto)
+                .into ( _detFotoWayang)
+
+            _detNamaWayang.setText(dataIntent.nama)
+            _detDetailWayang.setText(dataIntent.deskripsi)
         }
     }
 }
