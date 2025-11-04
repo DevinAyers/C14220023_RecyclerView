@@ -16,6 +16,7 @@ class adapterRecView(private val listWayang: List<dcWayang>) :
 
     interface OnItemClickCallback {
         fun onItemClicked(data: dcWayang)
+        fun delData(pos: Int)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
@@ -60,6 +61,7 @@ class adapterRecView(private val listWayang: List<dcWayang>) :
         holder._gambarWayang.setOnClickListener {
 //            Toast.makeText(holder.itemView.context,wayang.nama,Toast.LENGTH_LONG).show()
             onItemClickCallback.onItemClicked(listWayang[holder.adapterPosition])
+            onItemClickCallback.delData(position)
         }
     }
 }
