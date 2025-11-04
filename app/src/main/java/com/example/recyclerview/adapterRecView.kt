@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso
 
 class adapterRecView(private val listWayang: List<dcWayang>) :
     RecyclerView.Adapter<adapterRecView.ListViewHolder>() {
-    private var onItemClickCallback: OnItemClickCallback? = null
+    private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
         fun onItemClicked(data: dcWayang)
