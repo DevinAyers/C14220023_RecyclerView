@@ -1,5 +1,6 @@
 package com.example.recyclerview
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -79,6 +80,10 @@ fun TampilanData() {
         override fun onItemClicked(data: dcWayang) {
             Toast.makeText(this@MainActivity,data.nama, Toast.LENGTH_LONG)
                 .show()
+
+            val intent = Intent (this@MainActivity, detWayang::class.java)
+            intent.putExtra("kirimData", data)
+            startActivity(intent)
         }
     })
 
