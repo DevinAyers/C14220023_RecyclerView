@@ -12,6 +12,15 @@ import com.squareup.picasso.Picasso
 
 class adapterRecView(private val listWayang: List<dcWayang>) :
     RecyclerView.Adapter<adapterRecView.ListViewHolder>() {
+    private var onItemClickCallback: OnItemClickCallback? = null
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: dcWayang)
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val _gambarWayang: ImageView = itemView.findViewById(R.id.gambarWayang)
@@ -49,7 +58,8 @@ class adapterRecView(private val listWayang: List<dcWayang>) :
             .into(holder._gambarWayang)
 
         holder._gambarWayang.setOnClickListener {
-            Toast.makeText(holder.itemView.context,wayang.nama,Toast.LENGTH_LONG).show()
+//            Toast.makeText(holder.itemView.context,wayang.nama,Toast.LENGTH_LONG).show()
+            onItemClickCallback.onItemClicked(listWayang[holder.adapterPosition])
         }
     }
 }
