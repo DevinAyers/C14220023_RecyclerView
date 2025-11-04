@@ -64,4 +64,6 @@ class adapterRecView(private val listWayang: List<dcWayang>) :
             onItemClickCallback.delData(position)
         }
     }
+
+
 }
