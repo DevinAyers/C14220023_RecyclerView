@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    tools:context=".detWayang">
+
+    <ImageView
+        android:id="@+id/detailGambar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Gambar Wayang"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/detailNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama Wayang"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/detailKarakter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Karakter Wayang"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:textColor="#555555"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/detailDeskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi tentang wayang..."
+        android:textSize="15sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnKembali"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kembali"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:padding="10dp" />
+
+</LinearLayout>
