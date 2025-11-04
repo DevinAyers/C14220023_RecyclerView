@@ -1,6 +1,7 @@
 package com.example.recyclerview
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -70,6 +71,17 @@ fun TampilanData() {
         LinearLayoutManager.VERTICAL
     )
     _rvWayang.adapter = adapterRecView(arWayang)
+
+    val adapterWayang = adapterRecView(arWayang)
+    _rvWayang.adapter = adapterWayang
+
+    adapterWayang.setOnItemClickCallback(object : adapterRecView.OnItemClickCallback{
+        override fun onItemClicked(data: dcWayang) {
+            Toast.makeText(this@MainActivity,data.nama, Toast.LENGTH_LONG)
+                .show()
+        }
+    })
+
 }
 
 }
