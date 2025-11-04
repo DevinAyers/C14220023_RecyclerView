@@ -1,11 +1,13 @@
 package com.example.recyclerview
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class adapterRecView(private val listWayang: List<dcWayang>) :
     RecyclerView.Adapter<adapterRecView.ListViewHolder>() {
@@ -31,9 +33,18 @@ class adapterRecView(private val listWayang: List<dcWayang>) :
         holder: ListViewHolder,
         position: Int
     ) {
-        val data = listWayang[position]
-        holder._namaWayang.text = data.nama
-        holder._karakterWayang.text = data.karakter
-        holder._deskripsiWayang.text = data.deskripsi
+        val wayang = listWayang[position]
+        holder._namaWayang.text = wayang.nama
+        holder._karakterWayang.text = wayang.karakter
+        holder._deskripsiWayang.text = wayang.deskripsi
+
+        holder._namaWayang.setText(wayang.nama)
+        holder._karakterWayang.setText(wayang.karakter)
+        holder._deskripsiWayang.setText(wayang.deskripsi)
+        Log.d("TEST", wayang.foto)
+        Picasso.get()
+            .load(wayang.foto)
+            .resize(100, 100)
+            .into(holder._gambarWayang)
     }
 }
